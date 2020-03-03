@@ -1,4 +1,13 @@
+-- harry-potter-and-wands
 select 
-    convert(numeric(10,4),round(min(lat_n),4))
-from station 
-where lat_n > 38.7780
+    a.id 
+    ,b.age 
+    ,a.coins_needed
+    ,a.power 
+from Wands a 
+left join Wands_Property b
+on a.code = b.code
+where b.is_evil = 0
+order by 
+    a.power desc 
+    ,b.age desc 
