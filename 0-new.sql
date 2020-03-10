@@ -1,9 +1,6 @@
 select 
-    a.x 
-    ,a.y
-from Functions a
-join Functions b
-    on a.x = b.x
-    and a.y = b.y
-order by 
-    a.x asc
+    min(lat_n) as a
+    ,min(long_w) as b 
+    ,max(lat_n) as c
+    ,max(long_w) as d
+from station
