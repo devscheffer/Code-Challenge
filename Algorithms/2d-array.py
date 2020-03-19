@@ -1,12 +1,3 @@
-arr = [
-    [1, 1, 1, 0, 0, 0]
-    , [0, 1, 0, 0, 0, 0]
-    , [1, 1, 1, 0, 0, 0]
-    , [0, 0, 2, 4, 4, 0]
-    , [0, 0, 0, 2, 0, 0]
-    , [0, 0, 1, 2, 4, 0]
-]
-
 #OK Top Glass 
 list_top = []
 for i in (arr[0:-2]):
@@ -36,8 +27,7 @@ for i in (arr[1:-1]):
         list_middle.append(list_temp_middle)
 
 
-#Glass
-
+#Check if Glass building is correct
 print(f"""
 T: {len(list_top)}
 M: {len(list_middle)}
@@ -50,6 +40,7 @@ def sum(list1):
         total += i
     return total
 
+#build the glass and their sum
 dict_Glass = {}
 for i in range(len(list_top)):
     t = sum(list_top[i])
@@ -58,9 +49,12 @@ for i in range(len(list_top)):
     sum_Glass = t + m + l
     dict_Glass[i] = [list_top[i],list_middle[i],list_lower[i],sum_Glass]
 
-max = 0
+#get the higher value glass
+max = dict_Glass[0][-1]
 glass_max = []
 for i in dict_Glass.values():
     if i[-1] > max:
         max = i[-1]
         glass_max = i
+
+return max
