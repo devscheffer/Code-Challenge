@@ -1,15 +1,9 @@
-p = 0
-n = 0
-z = 0
+n = 25
 
-for i in arr:
-    if i > 0:
-        p += 1
-    elif i < 0:
-        n += 1
-    elif i == 0:
-        z += 1
+for i in range(n):
+    st = ' '*(n-i-1)
+    a = st.ljust(n,'#')
+    print(a)
 
-print(p/len(arr))
-print(n/len(arr))
-print(z/len(arr))
+print(len('#########################'))
+print(len('#########################'))
